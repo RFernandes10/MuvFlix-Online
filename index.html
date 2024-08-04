@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="shortcut icon" href="assets/img/MuvFlix.png" type="image/x-icon">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" defer></script>
+  <script src="./assets/js/scripts.js" defer></script>
+  <title>MuvFlix</title>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="logo">MuvFlix Online</div>
+    <div class="search-container">
+      <input type="text" class="search-input" id="search-input" placeholder="Search movies or series..." aria-label="Search movies or series">
+      <button class="search-button" onclick="searchContent()">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="content-tabs">
+      <button class="tab active" onclick="switchTab('movies', event)">Movies</button>
+      <button class="tab" onclick="switchTab('series', event)">TV Series</button>
+    </div>
+    <div class="content-grid" id="content-grid"></div>
+    <button id="load-more" onclick="loadMoreContent()">Load More</button>
+  </div>
+
+  <div id="content-modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeContentModal()" aria-label="Close modal">&times;</button>
+      <div id="content-modal-details"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>
